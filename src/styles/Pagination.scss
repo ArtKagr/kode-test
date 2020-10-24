@@ -1,0 +1,10 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 35px;
+  background: #EBEBEB;
+
+  &-button {
+    cursor: pointer;
+  }
+}

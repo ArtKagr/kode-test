@@ -5,9 +5,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import configureStore from './store/store'
 
+const store = configureStore
 render(
-    <Provider>
+    <Provider store={store}>
         <App />
     </Provider>,
   document.getElementById('root')

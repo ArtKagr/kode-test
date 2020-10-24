@@ -2,19 +2,24 @@
   display: flex;
   flex-direction: column;
   width: 217px;
-  height: 217px;
+  height: 317px;
   padding: 14px 16px;
   background: #EBEBEB;
   cursor: pointer;
+  margin-bottom: 18px;
 
     &-image {
       background: #C4C4C4;
       width: 100%;
-      height: 60%;
-
+      height: 75%;
+      object-fit: fill;
     }
 
     &-description {
+
+      &-title {
+        font-weight: bold;
+      }
 
       &-subtitle {
         margin: 0;

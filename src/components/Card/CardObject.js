@@ -1,13 +1,14 @@
-import React from 'react';
+import React from 'react'
+
 import '../../styles/CardObject.scss'
 
-export function CardObject() {
+export function CardObject(props) {
         return (
-            <div className="card">
-                <div className="card-image"/>
+            <div key={props.item} className="card">
+                <img className="card-image" src={props.card.imageUrl} alt={props.card.name}/>
                 <div className="card-description">
-                    <p className="card-description-title">Pokemon name</p>
-                    <p className="card-description-subtitle">Artist</p>
+                    <p className="card-description-title">{props.card.name}</p>
+                    <p className="card-description-subtitle">{props.card.artist}</p>
                 </div>
             </div>
         )

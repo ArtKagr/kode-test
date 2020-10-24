@@ -1,11 +1,12 @@
-import React from 'react';
+import React from 'react'
 import {Header} from './components/Header'
-import {MainContent} from "./components/MainContent";
+import {MainContent} from "./components/MainContent"
+import axios from "axios";
 
 export class Default extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {}
+        this.state = { cards: [] }
     }
 
     render() {

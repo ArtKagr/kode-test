@@ -4,4 +4,14 @@
   margin-left: 40px;
   padding: 20px;
   background: #FAFAFA;
+  overflow: auto;
+
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: auto;
+    margin-bottom: 18px;
+    height: calc(100% - 64px);
+  }
 }
