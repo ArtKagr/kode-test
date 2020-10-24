@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 62px;
+  margin: 18px 40px;
+  background: #EBEBEB;
+
+  &-logout {
+    display: flex;
+    margin: 0;
+    font-size: 18px;
+    cursor: pointer;
+  }
+}
