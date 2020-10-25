@@ -1,10 +1,49 @@
 .pagination {
   display: flex;
   justify-content: space-between;
-  padding: 12px 35px;
+  padding: 6px 35px;
   background: #EBEBEB;
 
-  &-button {
-    cursor: pointer;
+  &-control {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+
+    &-page_control {
+      display: flex;
+      width: 30%;
+      justify-content: space-between;
+
+      &-button {
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      &-pages {
+        display: flex;
+        align-items: center;
+
+        &-active_page {
+          margin-right: 12px;
+          color: blue;
+        }
+
+        &-current_page {
+          margin-right: 12px;
+        }
+      }
+
+    }
+
+  }
+
+  &-total_counts {
+    width: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

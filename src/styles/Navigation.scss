@@ -1,6 +1,15 @@
 .navigation {
   width: 20%;
   height: 100%;
-  padding: 20px;
   background: #FAFAFA;
+  padding: 30px;
+
+  &-type_search {
+    display: flex;
+    margin-bottom: 48px;
+  }
+
+  &-subtype_search {
+    display: flex;
+  }
 }

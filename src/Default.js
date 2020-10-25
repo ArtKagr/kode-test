@@ -1,7 +1,6 @@
 import React from 'react'
 import {Header} from './components/Header'
-import {MainContent} from "./components/MainContent"
-import axios from "axios";
+import {CardTable} from "./components/Cards/CardsTable";
 
 export class Default extends React.Component {
     constructor(props) {
@@ -13,7 +12,7 @@ export class Default extends React.Component {
         return (
             <div className="default">
                 <Header />
-                <MainContent />
+                <CardTable />
             </div>
         )
     }
