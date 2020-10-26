@@ -1,3 +1,9 @@
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .navigation {
   width: 20%;
   height: 100%;
@@ -5,11 +11,21 @@
   padding: 30px;
 
   &-type_search {
-    display: flex;
-    margin-bottom: 48px;
+    width: 100%;
+    padding: 20px 10px;
+    border: none;
+    outline: none;
+    background: #ECECEC;
+    margin-bottom: 60px;
+    cursor: pointer;
   }
 
   &-subtype_search {
-    display: flex;
+    width: 100%;
+    padding: 20px 10px;
+    border: none;
+    outline: none;
+    background: #ECECEC;
+    cursor: pointer;
   }
 }

@@ -95,34 +95,28 @@ export class CardTable extends React.Component {
     render() {
         let CardObjects = null
         if(this.state.cards.length) CardObjects = this.state.cards.map(function(card, key) {
-            return <div>
-                        <Link to={`/cards/${card.id}`}><CardObject item={key} card={card}/></Link>
-                        <Route path={`/cards/${card.id}`} component={CurrentCard} />
-                    </div>
+            return <CardObject card={card} />
         })
         return (
-            <div className="card_table">
-                <Navigation
-                    types={this.setTypes}
-                    subTypes={this.setSubTypes}
-                    currentPage={this.state.currentPage}
-                />
-                <div className="card_table-content">
-                    <Router>
-                        <div className="card_table-content-cards">{CardObjects}</div>
-                        <Switch><Redirect from='/' to='/cards'/></Switch>
-                    </Router>
-                    <Pagination
-                        setPreviousCards={this.setPreviousCards}
-                        setNextCards={this.setNextCards}
-                        currentPage={this.setCurrentPage}
-                        totalCount={this.state.totalCount}
-                        pageSize={this.state.pageSize}
-                        type={this.state.types === 'Types' ? null : this.state.types}
-                        subtype={this.state.subTypes === 'Subtypes' ? null : this.state.subTypes}
+                <div className="card_table">
+                    <Navigation
+                        types={this.setTypes}
+                        subTypes={this.setSubTypes}
+                        currentPage={this.state.currentPage}
                     />
+                    <div className="card_table-content">
+                        <div className="card_table-content-cards">{CardObjects}</div>
+                        <Pagination
+                            setPreviousCards={this.setPreviousCards}
+                            setNextCards={this.setNextCards}
+                            currentPage={this.setCurrentPage}
+                            totalCount={this.state.totalCount}
+                            pageSize={this.state.pageSize}
+                            type={this.state.types === 'Types' ? null : this.state.types}
+                            subtype={this.state.subTypes === 'Subtypes' ? null : this.state.subTypes}
+                        />
+                    </div>
                 </div>
-            </div>
         );
     }
 }

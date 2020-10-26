@@ -1,3 +1,77 @@
 .current_card {
-  display: flex;
+  padding: 0 40px;
+
+  &-content {
+    display: flex;
+
+    &-image {
+      width: 422px;
+      height: 600px;
+      background: #C4C4C4;
+      margin-right: 34px;
+    }
+
+    &-specifications {
+      padding-top: 18px;
+      display: flex;
+      flex-direction: column;
+
+      &-main {
+        padding-bottom: 40px;
+        border-bottom: 1px solid lightgray;
+        width: 700px;
+
+        &-text {
+          display: flex;
+          margin-bottom: 24px;
+
+          &-title {
+            font-size: 24px;
+            font-weight: bold;
+            width: 30%;
+          }
+
+          &-value {
+            font-size: 24px;
+          }
+        }
+      }
+
+      &-parameters {
+        margin-top: 24px;
+        padding-top: 40px;
+        width: 700px;
+
+        &-text {
+          display: flex;
+          margin-bottom: 24px;
+
+          &-title {
+            font-size: 22px;
+            font-weight: bold;
+            width: 30%;
+          }
+
+          &-value {
+            font-size: 22px;
+
+            &-cost {
+              display: flex;
+
+              &-value {
+                margin: 0 8px 0 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-description {
+      width: 800px;
+      margin-top: 44px;
+      font-size: 18px;
+    }
+  }
+
 }
