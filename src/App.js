@@ -1,15 +1,16 @@
 import React from 'react';
 import './styles/App.scss';
-import './styles/Default.scss';
-import {getCards} from './store/actions/getCards'
 import {Header} from "./components/Header";
 import {CardTable} from "./components/Cards/CardsTable";
-import { BrowserRouter as Router, Route, Switch, Redirect, withRouter, Link } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom"
 import {CurrentCard} from "./components/Card/CurrentCard";
+import {Login} from "./components/Login";
+import {OneTimePassword} from "./components/OneTimePassword";
 
 class App extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {}
     }
 
     render() {
@@ -17,6 +18,12 @@ class App extends React.Component {
                 <div className="app">
                     <Router>
                             <Switch>
+                                <Route exact path="/login">
+                                    <Login />
+                                </Route>
+                                <Route exact path="/otp">
+                                    <OneTimePassword />
+                                </Route>
                                 <Route exact path="/cards">
                                     <Header backButton={false}/>
                                     <CardTable />
@@ -26,7 +33,7 @@ class App extends React.Component {
                                     <CurrentCard/>
                                 </Route>
                             </Switch>
-                            <Redirect from='/' to='/cards'/>
+                            <Redirect from='/' to='/login'/>
                     </Router>
                 </div>
         )

@@ -25,6 +25,7 @@
       &-pages {
         display: flex;
         align-items: center;
+        cursor: pointer;
 
         &-active_page {
           margin-right: 12px;

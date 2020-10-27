@@ -5,9 +5,10 @@ import axios from "axios";
 export class Pagination extends React.Component {
     constructor(props) {
         super(props)
+        this.state = { currentPage: 1, totalCount: 0, pageSize: 0, pages: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] }
         this.getPreviousPage = this.getPreviousPage.bind(this)
         this.getNextPage = this.getNextPage.bind(this)
-        this.state = { currentPage: 1, totalCount: 0, pageSize: 0, pages: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] }
+        this.setPage = this.setPage.bind(this)
     }
 
     getPreviousPage() {
@@ -15,7 +16,7 @@ export class Pagination extends React.Component {
             this.props.currentPage(this.state.currentPage - 1)
             axios.get(`https://api.pokemontcg.io/v1/cards`, { params: { page: this.state.currentPage - 1, types: this.props.type, subtype: this.props.subtype }})
                 .then(res => {
-                    this.props.setPreviousCards(res.data.cards)
+                    this.props.setCards(res.data.cards)
                     this.setState({ totalCount: res.headers['total-count'] })
                     this.setState({ pageSize: res.headers['page-size'] })
                     })
@@ -31,11 +32,23 @@ export class Pagination extends React.Component {
         }
     }
 
+    setPage(event) {
+        this.props.currentPage(Number(event.target.textContent))
+        axios.get(`https://api.pokemontcg.io/v1/cards`, { params: { page: Number(event.target.textContent), types: this.props.type, subtype: this.props.subtype }})
+            .then(res => {
+                this.props.setCards(res.data.cards)
+                this.setState({ totalCount: res.headers['total-count'] })
+                this.setState({ pageSize: res.headers['page-size'] })
+            })
+            .catch(e => { console.warn(e) })
+        this.setState((state) => ({ currentPage: Number(event.target.textContent)}))
+    }
+
     getNextPage() {
         this.props.currentPage(this.state.currentPage + 1)
         axios.get(`https://api.pokemontcg.io/v1/cards`, { params: { page: this.state.currentPage + 1, types: this.props.type, subtype: this.props.subtype }})
             .then(res => {
-                this.props.setNextCards(res.data.cards)
+                this.props.setCards(res.data.cards)
                 this.setState({ totalCount: res.headers['total-count'] })
                 this.setState({ pageSize: res.headers['page-size'] })
             })
@@ -45,7 +58,7 @@ export class Pagination extends React.Component {
     }
 
     render() {
-        const pages = this.state.pages.map(page => <span className={this.state.currentPage === page ? "pagination-control-page_control-pages-active_page" : "pagination-control-page_control-pages-current_page"}>{page}</span>)
+        const pages = this.state.pages.map(page => <span className={this.state.currentPage === page ? "pagination-control-page_control-pages-active_page" : "pagination-control-page_control-pages-current_page"} onClick={this.setPage}>{page}</span>)
         return (
             <div className="pagination">
                 <div className="pagination-control">

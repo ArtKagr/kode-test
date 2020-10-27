@@ -26,20 +26,14 @@ export class CardTable extends React.Component {
             subTypes: null,
             currentPage: 1
         }
-        this.setPreviousCards = this.setPreviousCards.bind(this)
-        this.setNextCards = this.setNextCards.bind(this)
-        this.setCurrentCard = this.setCurrentCard.bind(this)
+        this.setCards = this.setCards.bind(this)
         this.setTypes = this.setTypes.bind(this)
         this.setSubTypes = this.setSubTypes.bind(this)
         this.setCurrentPage = this.setCurrentPage.bind(this)
     }
 
-    setPreviousCards(previousCards) {
+    setCards(previousCards) {
         this.setState({ cards: previousCards })
-    }
-
-    setNextCards(nextCards) {
-        this.setState({ cards: nextCards })
     }
 
     setCurrentPage(currentPage) {
@@ -49,7 +43,7 @@ export class CardTable extends React.Component {
     setTypes(types) {
         this.setState({ types })
         axios.get('https://api.pokemontcg.io/v1/cards', {
-            params: { page: 1, types: types === 'Types' ? null : types }
+            params: { page: 1, types: types === 'Types' ? null : types },
         })
             .then(res => {
                 const cards = res.data.cards
@@ -74,10 +68,6 @@ export class CardTable extends React.Component {
                     pageSize: res.headers['page-size']
                 })
             })
-    }
-
-    setCurrentCard(currentCard) {
-        console.warn('currentCard', currentCard)
     }
 
     componentDidMount() {
@@ -107,8 +97,7 @@ export class CardTable extends React.Component {
                     <div className="card_table-content">
                         <div className="card_table-content-cards">{CardObjects}</div>
                         <Pagination
-                            setPreviousCards={this.setPreviousCards}
-                            setNextCards={this.setNextCards}
+                            setCards={this.setCards}
                             currentPage={this.setCurrentPage}
                             totalCount={this.state.totalCount}
                             pageSize={this.state.pageSize}

@@ -10,22 +10,43 @@ select {
   background: #FAFAFA;
   padding: 30px;
 
-  &-type_search {
-    width: 100%;
-    padding: 20px 10px;
-    border: none;
-    outline: none;
-    background: #ECECEC;
-    margin-bottom: 60px;
-    cursor: pointer;
-  }
 
-  &-subtype_search {
+  &-search {
     width: 100%;
-    padding: 20px 10px;
+    padding: 20px 0;
     border: none;
     outline: none;
     background: #ECECEC;
     cursor: pointer;
+    z-index: 100;
+    margin-bottom: 60px;
+
+    &-value {
+      padding: 0 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    &-list {
+      padding: 0 10px;
+
+      &-input {
+        width: 100%;
+        outline: none;
+        border: none;
+        background: inherit;
+        margin: 24px 0;
+      }
+
+      &-subtypes {
+        max-height: 300px;
+        overflow: auto;
+
+        &-item {
+          padding: 4px 0;
+          border-bottom: 1px solid lightgray;
+        }
+      }
+    }
   }
 }
