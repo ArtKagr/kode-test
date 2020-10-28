@@ -48,7 +48,7 @@ export class Navigation extends React.Component {
 
     toggleTypeList() {
         this.setState((state) => ({
-            typeListVisible: !state.typeListVisible,
+            typeListVisible: this.state.currentSubType !== 'Subtypes' || this.props.currentPage !== 1 ? state.typeListVisible : !state.typeListVisible,
             cardTypes: state.cardTypesCopy
         }))
     }

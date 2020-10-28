@@ -15,27 +15,27 @@ class App extends React.Component {
 
     render() {
         return (
-                <div className="app">
-                    <Router>
-                            <Switch>
-                                <Route exact path="/login">
-                                    <Login />
-                                </Route>
-                                <Route exact path="/otp">
-                                    <OneTimePassword />
-                                </Route>
-                                <Route exact path="/cards">
-                                    <Header backButton={false}/>
-                                    <CardTable />
-                                </Route>
-                                <Route exact path="/cards/:id">
-                                    <Header backButton={true}/>
-                                    <CurrentCard/>
-                                </Route>
-                            </Switch>
-                            <Redirect from='/' to='/login'/>
-                    </Router>
-                </div>
+            <div className="app">
+                 <Router basename = {'/kode-test'}>
+                     <Switch>
+                          <Route exact path="/login">
+                               <Login />
+                          </Route>
+                         <Route exact path="/otp">
+                             <OneTimePassword />
+                         </Route>
+                         <Route exact path="/cards">
+                             <Header backButton={false}/>
+                             <CardTable />
+                         </Route>
+                         <Route exact path="/cards/:id">
+                             <Header backButton={true}/>
+                             <CurrentCard/>
+                         </Route>
+                     </Switch>
+                     <Redirect from='/' to='/login'/>
+                 </Router>
+            </div>
         )
     }
 }
