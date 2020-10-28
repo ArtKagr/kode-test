@@ -31,7 +31,7 @@ const getObjectProperty = (obj, path, defaultValue) => {
  getObjectProperty(obj, "pupa.ne.tuda", "Default value"); // > 'Default value'`
 ```
 
-## [Решение второй задачи](artkagr.github.io/kode-test)
+## [Решение второй задачи](https://artkagr.github.io/kode-test)
 
 ### Декомпозиция задач:
 * Инициализация проекта - 1 час
