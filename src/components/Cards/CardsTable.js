@@ -1,19 +1,9 @@
-import React from 'react';
+import React from 'react'
+import {CardObject} from "../Card/CardObject"
+import {Pagination} from "../Pagination"
+import {Navigation} from "./Navigation"
 import '../../styles/CardTable.scss'
-import {CardObject} from "../Card/CardObject";
 import axios from "axios";
-import {Pagination} from "../Pagination";
-import {CurrentCard} from "../Card/CurrentCard";
-
-import {
-    BrowserRouter as Router,
-    Route,
-    Switch,
-    Redirect,
-    withRouter,
-    Link,
-} from "react-router-dom"
-import {Navigation} from "./Navigation";
 
 export class CardTable extends React.Component {
     constructor(props) {

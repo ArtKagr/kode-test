@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-
 import '../../styles/CardObject.scss'
 
 export class CardObject extends React.Component {

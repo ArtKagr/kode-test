@@ -1,1 +1,0 @@
-import ACTION_2 from '../actions/action_2';

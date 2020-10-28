@@ -1,6 +1,6 @@
 import React from 'react'
+import axios from "axios"
 import '../../styles/CurrentCard.scss'
-import axios from "axios";
 
 export class CurrentCard extends React.Component {
     constructor(props) {

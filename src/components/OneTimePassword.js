@@ -25,15 +25,14 @@ export class OneTimePassword extends React.Component {
         const button = this.state.accept
             ? <Link to={`/cards`}>
                 <div className="login-container-button"/>
-            </Link>
+              </Link>
             : <div className="login-container-button_disabled"/>
         return (
             <div className="login">
                 <div className="login-container">
                     <div className="login-container-email">
                         <span className="login-container-email-title">Code from SMS</span>
-                        <input className="login-container-email-value" placeholder="Enter login"
-                               onKeyUp={this.setPassword}/>
+                        <input className="login-container-email-value" placeholder="Enter login" onKeyUp={this.setPassword}/>
                     </div>
                     <div>{button}</div>
                 </div>
